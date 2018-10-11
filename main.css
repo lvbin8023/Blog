@@ -86,7 +86,7 @@ ul {
 
 .banner {
     height: 515px;
-    background: url(../img/rs-cover.jpg) no-repeat center center;
+    background: url(./img/rs-cover.jpg) no-repeat center center;
     background-size: cover;
 }
 
