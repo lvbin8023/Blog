@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>我的简历</title>
   <link rel="stylesheet" href="./main.css">
   <script src="//at.alicdn.com/t/font_865975_1jelxqdlpj6.js"></script>
   <style type="text/css">
@@ -20,7 +20,7 @@
 </head>
 
 <body>
-<div class="topNavBar">
+<div id="topNavBar" class="topNavBar">
   <div class="inner clearFix">
     <a class="logo" href="">
       <span class="rs">RS</span><span class="card">card</span>
@@ -84,30 +84,65 @@
       </a>
     </footer>
   </div>
-  <a href="" class="download">下载 PDF 简历</a>
-  <p>方应杭， 资深前端工程师，资深前端讲师，现在在 饥人谷 教前端课程。<br>
+  <div class="downloadResume-wraper">
+    <a class="downloadResume" href="" download>下载 PDF 简历</a>
+  </div>
+  <p class="selfIntroduction">吕彬，目前是初级前端工程师，目标是成为资深前端工程师，现在在饥人谷学习前端课程。<br>
     技能：前端开发，Rails 开发，Node.js 开发
   </p>
 </main>
 <section class="skills">
   <h2>技能</h2>
-  <ol>
-    <li>HTML 5 &amp; CSS 3</li>
-    <li>JavaScript</li>
-    <li>jQuery</li>
-    <li>Vue</li>
-    <li>React</li>
-    <li>HTTP</li>
+  <ol class="skillGroup clearFix">
+    <li>
+      <h3>HTML 5 &amp; CSS 3</h3>
+      <div class="progressBar">
+        <div class="progress" style="width: 80%"></div>
+      </div>
+    </li>
+    <li>
+      <h3>JavaScript</h3>
+      <div class="progressBar">
+        <div class="progress" style="width: 60%"></div>
+      </div>
+    </li>
+    <li>
+      <h3>jQuery</h3>
+      <div class="progressBar">
+        <div class="progress" style="width: 70%"></div>
+      </div>
+    </li>
+    <li>
+      <h3>Vue</h3>
+      <div class="progressBar">
+        <div class="progress" style="width: 30%"></div>
+      </div>
+    </li>
+    <li>
+      <h3>React</h3>
+      <div class="progressBar">
+        <div class="progress" style="width: 10%"></div>
+      </div>
+    </li>
+    <li>
+      <h3>HTTP</h3>
+      <div class="progressBar">
+        <div class="progress" style="width: 40%"></div>
+      </div>
+    </li>
   </ol>
 </section>
-<section class="works">
+<section class="portfolio">
   <h2>作品集</h2>
   <nav>
-    <ol>
-      <li>所有</li>
-      <li>框架</li>
-      <li>原生JS&amp;CSS</li>
+    <ol class="clearFix">
+      <li id="portfolio1">所有</li>
+      <li id="portfolio2">框架</li>
+      <li id="portfolio3">原生JS&amp;CSS</li>
     </ol>
+    <div id="bar" class="portfolioBar state-1">
+      <div class="barInner"></div>
+    </div>
   </nav>
   <div class="jobs">
     <div class="big"></div>
@@ -115,6 +150,24 @@
     <div class="small"></div>
   </div>
 </section>
+<script>
+    let portfolio1 = document.getElementById('portfolio1');
+    let portfolio2 = document.getElementById('portfolio2');
+    let portfolio3 = document.getElementById('portfolio3');
+    let bar = document.getElementById('bar');
+
+    portfolio1.onclick = function () {
+        bar.className = 'portfolioBar state-1'
+    };
+
+    portfolio2.onclick = function () {
+        bar.className = 'portfolioBar state-2'
+    };
+
+    portfolio3.onclick = function () {
+        bar.className = 'portfolioBar state-3'
+    };
+</script>
 </body>
 
 </html>

@@ -10,6 +10,10 @@ body {
     padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
 a {
     color: inherit;
     text-decoration: none;
@@ -21,7 +25,7 @@ hr {
     border-top: 1px solid #dedede;
 }
 
-ul {
+ul, ol {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -35,7 +39,7 @@ ul {
 
 .topNavBar {
     margin: 20px 0;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -95,10 +99,15 @@ ul {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+main {
+    margin-top: -330px;
+}
+
 main .userCard {
     max-width: 940px; /*自适应宽度*/
     margin: 0 auto;
     background-color: #fff;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
 }
 
 .userCard .welcome {
@@ -184,3 +193,142 @@ main .userCard {
     fill: white;
     vertical-align: top;
 }
+
+main .downloadResume-wraper {
+    text-align: center;
+}
+
+main .downloadResume {
+    font-size: 14px;
+    color: #3d4451;
+    line-height: 16px;
+    padding: 21px 55px;
+    display: inline-block;
+    border: 1px solid #cdcfd1;
+    background-color: #efefef;
+    border-radius: 2px;
+    font-weight: bold;
+    margin: 32px 0;
+    transition: box-shadow 0.3s;
+}
+
+main .downloadResume:hover {
+    box-shadow: 0 4px 13px 0 rgba(0, 0, 0, 0.2);
+}
+
+main .selfIntroduction {
+    font-family: "KaiTi";
+    line-height: 1.8;
+    font-size: 18px;
+    max-width: 940px; /*自适应宽度*/
+    margin: 0 auto;
+    text-align: center;
+}
+
+section.skills,
+section.portfolio {
+    max-width: 940px;
+    margin: 60px auto 0;
+}
+
+section.skills h2,
+section.portfolio h2 {
+    font-size: 34px;
+    font-weight: 600;
+    color: #3d4451;
+    line-height: 1.2;
+    text-align: center;
+}
+
+section.skills h3 {
+    font-size: 14px;
+    line-height: 1.1;
+    padding-right: 40px;
+}
+
+section.skills ol {
+    background-color: white;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+    padding: 42px 50px 10px;
+    margin-top: 30px;
+}
+
+section.skills ol li {
+    float: left;
+    width: 48%;
+    box-sizing: border-box;
+}
+
+section.skills ol li:nth-child(even) {
+    float: right;
+}
+
+section.skills .progressBar {
+    height: 5px;
+    background-color: #fae1e1;
+    border-radius: 3px;
+    margin: 4px 0 40px;
+}
+
+section.skills .progressBar .progress {
+    height: 100%;
+    width: 70%;
+    background-color: #e6686a;
+    border-radius: 3px;
+}
+
+section.portfolio {
+    text-align: center;
+}
+
+section.portfolio nav {
+    margin: 32px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+section.portfolio nav ol {
+    margin: 0 auto 10px;
+    display: inline-block;/*加了inline-block就要加vertical-align：top*/
+    vertical-align: top;
+}
+
+section.portfolio nav ol li {
+    float: left;
+    cursor: pointer;
+}
+
+section.portfolio nav ol li:nth-child(2) {
+    margin: 0 40px;
+}
+
+section.portfolio nav .portfolioBar {
+    height: 5px;
+    background-color: white;
+    margin-bottom: 100px;
+    border-radius: 2px;
+}
+
+section.portfolio nav .portfolioBar .barInner {
+    height: 100%;
+    background-color: #e6686a;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+section.portfolio nav .portfolioBar.state-1 .barInner {
+    margin-left: 0;
+    width: 32px;
+}
+
+section.portfolio nav .portfolioBar.state-2 .barInner {
+    margin-left: 72px;
+    width: 34px;
+}
+
+section.portfolio nav .portfolioBar.state-3 .barInner {
+    margin-left: 144px;
+    width: 90px;
+}
+
+
