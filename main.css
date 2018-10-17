@@ -279,10 +279,11 @@ section.skills .progressBar .progress {
 
 section.portfolio {
     text-align: center;
+    margin-bottom: 100px;
 }
 
 section.portfolio nav {
-    margin: 32px;
+    margin: 32px 0 0;
     display: inline-block;
     vertical-align: top;
 }
@@ -305,7 +306,7 @@ section.portfolio nav ol li:nth-child(2) {
 section.portfolio nav .portfolioBar {
     height: 5px;
     background-color: white;
-    margin-bottom: 100px;
+    margin-bottom: 28px;
     border-radius: 2px;
 }
 
@@ -330,5 +331,42 @@ section.portfolio nav .portfolioBar.state-3 .barInner {
     margin-left: 144px;
     width: 90px;
 }
+
+section.portfolio .works {
+    position: relative;
+    height: 597px;
+}
+
+section.portfolio .works .big {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+section.portfolio .works .smallOne {
+    position: absolute;
+    top: 0;
+    left: 645px;
+}
+
+section.portfolio .works .smallTwo {
+    position: absolute;
+    top: 312px;
+    left: 645px;
+}
+
+section.portfolio .works .big img {
+    width: 606px;
+    height: 597px;
+}
+
+section.portfolio .works .smallOne img,
+section.portfolio .works .smallTwo img{
+    width: 293px;
+    height: 285px;
+}
+
+
+
+
 
 
