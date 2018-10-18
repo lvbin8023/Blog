@@ -21,7 +21,7 @@
 
 <body>
 <div id="topNavBar" class="topNavBar">
-  <div class="inner clearFix">
+  <div id="inner" class="inner clearFix">
     <a class="logo" href="">
       <span class="rs">RS</span><span class="card">card</span>
     </a>
@@ -157,6 +157,31 @@
   </div>
 </section>
 <script>
+    // 固定导航栏
+    let fixNav = document.getElementById('topNavBar');
+    let innerDom = document.getElementById('inner');
+    document.addEventListener('scroll', winScroll, false);
+
+    function winScroll() {
+        let scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+        if (scrollTop > 0) {
+            fixNav.style.backgroundColor = "#efefef";
+            fixNav.style.position = 'fixed';
+            fixNav.style.margin = '0 auto';
+            fixNav.style.zIndex = '9999';
+            innerDom.style.padding = '20px 16px';
+            innerDom.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23)';
+        } else {
+            fixNav.style.backgroundColor = "";
+            fixNav.style.position = 'absolute';
+            fixNav.style.margin = '20px 0';
+            fixNav.style.zIndex = '';
+            innerDom.style.padding = '0 16px';
+            innerDom.style.boxShadow = '';
+        }
+    }
+
+    // 注册点击事件
     let portfolio1 = document.getElementById('portfolio1');
     let portfolio2 = document.getElementById('portfolio2');
     let portfolio3 = document.getElementById('portfolio3');
