@@ -217,7 +217,7 @@ main .downloadResume:hover {
 }
 
 main .selfIntroduction {
-    font-family: "KaiTi";
+    font-family: "SimKai";
     line-height: 1.8;
     font-size: 18px;
     max-width: 940px; /*自适应宽度*/
