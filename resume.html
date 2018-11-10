@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>我的简历</title>
+  <link rel="stylesheet" href="./loading.css">
   <link rel="stylesheet" href="./main.css">
   <script src="//at.alicdn.com/t/font_865975_1jelxqdlpj6.js"></script>
   <style type="text/css">
@@ -20,17 +21,34 @@
 </head>
 
 <body>
+<div id="welcomePage" class="welcomePage active">
+  <div class="loading"></div>
+</div>
 <div id="topNavBar" class="topNavBar">
   <div id="inner" class="inner clearFix">
     <a class="logo" href="">
       <span class="rs">RS</span><span class="card">card</span>
     </a>
-    <nav>
+    <nav class="menu">
       <ul class="clearFix">
-        <li><a href="">关于</a></li>
-        <li><a href="">技能</a></li>
-        <li><a href="">作品</a></li>
-        <li><a href="">博客</a></li>
+        <li><a href="#siteAbout">关于</a></li>
+        <li><a href="#siteSkills">技能</a></li>
+        <li class="menuTigger">
+          <a href="#siteWorks">作品</a>
+          <ul class="subMenu">
+            <li><a href="">作品1</a></li>
+            <li><a href="">作品2</a></li>
+            <li><a href="">作品3</a></li>
+          </ul>
+        </li>
+        <li class="menuTigger">
+          <a href="">博客</a>
+          <ul class="subMenu">
+            <li><a href="">博客1</a></li>
+            <li><a href="">博客2</a></li>
+            <li><a href="">博客3</a></li>
+          </ul>
+        </li>
         <li><a href="">日历</a></li>
         <li><a href="">联系方式</a></li>
         <li><a href="">其它</a></li>
@@ -42,7 +60,7 @@
   <div class="mask"></div>
 </div>
 <main>
-  <div class="userCard">
+  <div id="siteAbout" class="userCard">
     <div class="pictureAndText clearFix">
       <div class="picture">
         <img src="./img/avatar.jpg" width="299" height="347" alt="头像">
@@ -91,7 +109,7 @@
     技能：前端开发，Rails 开发，Node.js 开发
   </p>
 </main>
-<section class="skills">
+<section id="siteSkills" class="skills">
   <h2>技能</h2>
   <ol class="skillGroup clearFix">
     <li>
@@ -132,7 +150,7 @@
     </li>
   </ol>
 </section>
-<section class="portfolio">
+<section id="siteWorks" class="portfolio">
   <h2>作品集</h2>
   <nav>
     <ol class="clearFix">
@@ -156,49 +174,7 @@
     </div>
   </div>
 </section>
-<script>
-    // 固定导航栏
-    let fixNav = document.getElementById('topNavBar');
-    let innerDom = document.getElementById('inner');
-    document.addEventListener('scroll', winScroll, false);
-
-    function winScroll() {
-        let scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-        if (scrollTop > 0) {
-            fixNav.style.backgroundColor = "#efefef";
-            fixNav.style.position = 'fixed';
-            fixNav.style.margin = '0 auto';
-            fixNav.style.zIndex = '9999';
-            innerDom.style.padding = '20px 16px';
-            innerDom.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23)';
-        } else {
-            fixNav.style.backgroundColor = "";
-            fixNav.style.position = 'absolute';
-            fixNav.style.margin = '20px 0';
-            fixNav.style.zIndex = '';
-            innerDom.style.padding = '0 16px';
-            innerDom.style.boxShadow = '';
-        }
-    }
-
-    // 注册点击事件
-    let portfolio1 = document.getElementById('portfolio1');
-    let portfolio2 = document.getElementById('portfolio2');
-    let portfolio3 = document.getElementById('portfolio3');
-    let bar = document.getElementById('bar');
-
-    portfolio1.onclick = function () {
-        bar.className = 'portfolioBar state-1'
-    };
-
-    portfolio2.onclick = function () {
-        bar.className = 'portfolioBar state-2'
-    };
-
-    portfolio3.onclick = function () {
-        bar.className = 'portfolioBar state-3'
-    };
-</script>
+<script src="./main.js"></script>
 </body>
 
 </html>

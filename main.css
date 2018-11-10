@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
 }
 
 hr {
@@ -38,11 +39,21 @@ ul, ol {
 }
 
 .topNavBar {
-    margin: 20px 0;
-    position: absolute;
+    padding: 20px 0;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    transition: all 0.5s;
+    color: #b7b7b7;
+}
+
+.topNavBar.sticky {
+    background: white;
+    padding: 3px 0 10px;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    color: #3d4451;
 }
 
 .topNavBar .inner {
@@ -69,23 +80,77 @@ ul, ol {
     padding-top: 7px;
 }
 
-.topNavBar nav ul li {
+.topNavBar nav > ul > li {
     float: left;
     margin: 0 17px;
+    position: relative;
 }
 
-.topNavBar nav ul li a {
+.topNavBar nav > ul > li > a {
     font-size: 13px;
     font-weight: bold;
-    color: #b7b7b7;
+    color: inherit;
     display: block;
     padding: 5px 0;
     border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
+    position: relative;
 }
 
-.topNavBar nav ul li a:hover {
-    border-bottom-color: #e06567;
+.topNavBar nav > ul > li.active > a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #e06567;
+    height: 3px;
+    animation: menuSlide .3s;
+}
+
+@keyframes menuSlide {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.topNavBar .menuTigger > a {
+    margin-bottom: 5px;
+}
+
+.topNavBar .subMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    color: #3d4451;
+    animation: subMenuSlide .3s;
+}
+
+@keyframes subMenuSlide {
+    0% {
+        margin-right: 100%;
+    }
+    100% {
+        margin-right: 0;
+    }
+}
+
+.topNavBar .subMenu > li {
+    white-space: nowrap;
+}
+
+.topNavBar .subMenu > li > a {
+    display: block;
+    padding: 5px 10px;
+}
+
+.topNavBar li.active > .subMenu {
+    display: block;
 }
 
 .banner {
@@ -290,7 +355,7 @@ section.portfolio nav {
 
 section.portfolio nav ol {
     margin: 0 auto 10px;
-    display: inline-block;/*加了inline-block就要加vertical-align：top*/
+    display: inline-block; /*加了inline-block就要加vertical-align：top*/
     vertical-align: top;
 }
 
@@ -342,6 +407,7 @@ section.portfolio .works .big {
     top: 0;
     left: 0;
 }
+
 section.portfolio .works .smallOne {
     position: absolute;
     top: 0;
@@ -360,7 +426,7 @@ section.portfolio .works .big img {
 }
 
 section.portfolio .works .smallOne img,
-section.portfolio .works .smallTwo img{
+section.portfolio .works .smallTwo img {
     width: 293px;
     height: 285px;
 }
