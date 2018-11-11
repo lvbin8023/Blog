@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>我的简历</title>
-  <link rel="stylesheet" href="./loading.css">
   <link rel="stylesheet" href="./main.css">
   <script src="//at.alicdn.com/t/font_865975_1jelxqdlpj6.js"></script>
   <style type="text/css">
@@ -21,9 +20,9 @@
 </head>
 
 <body>
-<div id="welcomePage" class="welcomePage active">
-  <div class="loading"></div>
-</div>
+<!--<div id="welcomePage" class="welcomePage active">-->
+<!--<div class="loading"></div>-->
+<!--</div>-->
 <div id="topNavBar" class="topNavBar">
   <div id="inner" class="inner clearFix">
     <a class="logo" href="">
@@ -60,7 +59,7 @@
   <div class="mask"></div>
 </div>
 <main>
-  <div id="siteAbout" class="userCard">
+  <div data-x id="siteAbout" class="userCard">
     <div class="pictureAndText clearFix">
       <div class="picture">
         <img src="./img/avatar.jpg" width="299" height="347" alt="头像">
@@ -109,7 +108,7 @@
     技能：前端开发，Rails 开发，Node.js 开发
   </p>
 </main>
-<section id="siteSkills" class="skills">
+<section data-x id="siteSkills" class="skills">
   <h2>技能</h2>
   <ol class="skillGroup clearFix">
     <li>
@@ -150,7 +149,7 @@
     </li>
   </ol>
 </section>
-<section id="siteWorks" class="portfolio">
+<section data-x id="siteWorks" class="portfolio">
   <h2>作品集</h2>
   <nav>
     <ol class="clearFix">
@@ -174,6 +173,7 @@
     </div>
   </div>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
 <script src="./main.js"></script>
 </body>
 
