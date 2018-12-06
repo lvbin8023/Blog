@@ -26,7 +26,6 @@
         let a = document.querySelector('a[href="#' + id + '"]');
         let li = a.parentNode;
         let liBrothers = li.parentNode.children;
-        console.log(liBrothers);
         for (let j = 0; j < liBrothers.length; j++) {
             liBrothers[j].classList.remove('hightLight');
         }
