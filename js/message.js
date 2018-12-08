@@ -55,11 +55,15 @@
             let name = myForm.querySelector('input[name=name]').value;
             let content = myForm.querySelector('input[name=content]').value;
             this.model.save(name, content).then(function (object) {
-                let li = document.createElement('li');
-                li.innerText = `${object.attributes.name}: ${object.attributes.content}`;
-                let messageList = document.querySelector('#messageList');
-                myForm.querySelector('input[name=content]').value = '';
-                messageList.appendChild(li);
+                if (name === '' || content === '') {
+                    return false;
+                } else {
+                    let li = document.createElement('li');
+                    li.innerText = `${object.attributes.name}: ${object.attributes.content}`;
+                    let messageList = document.querySelector('#messageList');
+                    myForm.querySelector('input[name=content]').value = '';
+                    messageList.appendChild(li);
+                }
             });
         }
     };
