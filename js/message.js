@@ -1,26 +1,28 @@
 !function () {
-    let view = document.querySelector('section.message');
-    let model = {
-        init: function () {
-            let APP_ID = 'OnqyMMpEE9GEff1FljRuPF5E-9Nh9j0Va';
-            let APP_KEY = 'hOenA0u5I2o6RmSLSPLM3CG1';
-            AV.init({appId: APP_ID, appKey: APP_KEY});
-        },
-        // 获取数据
-        fetch: function () {
-            let query = new AV.Query('Message');
-            return query.find(); // Promise对象
-        },
-        // 创建数据
-        save: function (name, content) {
-            let Message = AV.Object.extend('Message');
-            let message = new Message();
-            return message.save({ // Promise 对象
-                'name': name,
-                'content': content
-            })
-        }
-    };
+    let view = window.View('section.message');
+    // 以前的写法
+    // let model = {
+    //     init: function () {
+    //         let APP_ID = 'OnqyMMpEE9GEff1FljRuPF5E-9Nh9j0Va';
+    //         let APP_KEY = 'hOenA0u5I2o6RmSLSPLM3CG1';
+    //         AV.init({appId: APP_ID, appKey: APP_KEY});
+    //     },
+    //     // 获取数据
+    //     fetch: function () {
+    //         let query = new AV.Query('Message');
+    //         return query.find(); // Promise对象
+    //     },
+    //     // 创建数据
+    //     save: function (name, content) {
+    //         let Message = AV.Object.extend('Message');
+    //         let message = new Message();
+    //         return message.save({ // Promise 对象
+    //             'name': name,
+    //             'content': content
+    //         })
+    //     }
+    // };
+    let model = window.model({resourceName: 'Message'});
     let controller = {
         view: null,
         model: null,
@@ -54,7 +56,7 @@
             let myForm = this.form;
             let name = myForm.querySelector('input[name=name]').value;
             let content = myForm.querySelector('input[name=content]').value;
-            this.model.save(name, content).then(function (object) {
+            this.model.save({'name': name, 'content': content}).then(function (object) {
                 if (name === '' || content === '') {
                     return false;
                 } else {
